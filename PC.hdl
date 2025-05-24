@@ -1,0 +1,22 @@
+CHIP PC {
+    IN in[16],inc, load, reset;
+    OUT out[16];
+    
+    PARTS:
+    Register(in=Mout,load=true,out=Rout,out=out);
+    Inc16(in=Rout,out=Iout);
+    Mux8Way16(
+        a=Rout,
+        b=Iout,
+        c=in,
+        d=in,
+        e[0..15]=false,
+        f[0..15]=false,
+        g[0..15]=false,
+        h[0..15]=false,
+        sel[0]=inc,
+        sel[1]=load,
+        sel[2]=reset,
+        out=Mout
+        );
+}
