@@ -1,0 +1,45 @@
+CHIP Memory {
+    IN in[16], load, address[15];
+    OUT out[16];
+
+    PARTS:
+
+    RAM16K(
+        in=in,
+        load=ramloadfinal,
+        address=address[0..13],
+        out=ramout
+    );
+
+    Screen(
+        in=in,
+        load=screenload,
+        address=address[0..12],
+        out=screenout
+    );
+
+    Keyboard(out=keyboardout);
+
+    DMux4Way(in=load, sel=address[13..14], a=ramload1, b=ramload2, c=screenload);
+
+    Or(a=ramload1,b=ramload2,out=ramloadfinal);
+
+    Mux8Way16(
+        a=ramout,
+        b=ramout,
+        c=ramout,
+        d=ramout,
+        e=screenout,
+        f=screenout,
+        g=keyboardout,
+        h=false,
+        sel[0]=orout,
+        sel[1]=address[13],
+        sel[2]=address[14],
+        out=out
+    );
+
+    Or8Way(in=address[0..7],out=or0to7);
+    Or8Way(in[0..4]=address[8..12],out=or8to12);
+    Or(a=or0to7,b=or8to12,out=orout);
+}   

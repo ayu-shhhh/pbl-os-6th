@@ -1,16 +1,16 @@
 CHIP ALU {
     IN  
-        x[16], y[16],  // 16-bit inputs        
-        zx, // zero the x input?
-        nx, // negate the x input?
-        zy, // zero the y input?
-        ny, // negate the y input?
+        x[16], y[16],        
+        zx, 
+        nx, 
+        zy, 
+        ny, 
         f,  // compute (out = x + y) or (out = x & y)?
-        no; // negate the out output?
+        no; 
     OUT 
-        out[16], // 16-bit output
-        zr,      // if (out == 0) equals 1, else 0
-        ng;      // if (out < 0)  equals 1, else 0
+        out[16], 
+        zr,      
+        ng; 
 
     PARTS:
     Not16(in=x,out=NOTx);
