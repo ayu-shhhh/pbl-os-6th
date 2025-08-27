@@ -90,10 +90,6 @@ To test and run the projects in this repository, you will need the official Nand
     * Open the `VM Emulator`.
     * Click `File > Load Program` and load the **directory** containing the compiled `.vm` files (e.g., the `Pong` directory from the course materials, after compiling it with my compiler).
 
-## Key Learnings & Challenges
-
-The most challenging yet rewarding part of this project was building the Jack compiler (Projects 10 & 11). It required a deep understanding of parsing techniques, symbol table management, and the underlying VM architecture. This project solidified my understanding of how high-level code is systematically translated into machine-executable instructions.
-
 ## Acknowledgements
 
 * **Noam Nisan and Shimon Schocken** for creating this incredible course and book.
