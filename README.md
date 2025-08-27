@@ -72,7 +72,7 @@ To test and run the projects in this repository, you will need the official Nand
 1.  Download the **Nand2Tetris Software Suite** from the official website: [www.nand2tetris.org](https://www.nand2tetris.org/software)
 2.  Clone this repository:
     ```sh
-    git clone 
+    git clone https://github.com/ayu-shhhh/pbl-os-6th
     ```
 
 ### Usage Examples
